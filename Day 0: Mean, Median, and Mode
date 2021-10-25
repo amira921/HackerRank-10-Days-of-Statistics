@@ -1,0 +1,10 @@
+import numpy as np
+from statistics import mode
+
+size = int(input())
+numbers =list(map(int,input().split()))
+
+print(np.mean(numbers))
+print(np.median(numbers))
+numbers=sorted(numbers)
+print(mode(numbers))
