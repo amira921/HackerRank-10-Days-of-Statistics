@@ -1,0 +1,18 @@
+def weightedMean(X, W):
+    sum_w=sum(W)
+    zipped=zip(X,W)
+    sum_zipped=0
+    
+    for i ,j in zipped:
+        sum_zipped += i*j
+        
+    print(round((sum_zipped/sum_w),1))
+
+if __name__ == '__main__':
+    n = int(input().strip())
+
+    vals = list(map(int, input().rstrip().split()))
+
+    weights = list(map(int, input().rstrip().split()))
+
+    weightedMean(vals, weights)
