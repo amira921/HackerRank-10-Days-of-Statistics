@@ -1,0 +1,38 @@
+import math
+import os
+import random
+import re
+import sys
+import statistics as s
+
+def quartiles(arr):
+    n=len(arr)
+    mid=int(n/2)
+    arr.sort()
+    
+    if (n%2!=0):
+        q1 = s.median(arr[:mid])
+        q3 = s.median(arr[mid+1:])
+        
+    elif(n%2==0):           
+        q1 = s.median(arr[:mid])
+        q3 = s.median(arr[mid:])
+    a=[]   
+    a.append(int(q1))
+    a.append(int(s.median(arr)))
+    a.append(int(q3))        
+    return a
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input().strip())
+
+    data = list(map(int, input().rstrip().split()))
+
+    res = quartiles(data)
+
+    fptr.write('\n'.join(map(str, res)))
+    fptr.write('\n')
+
+    fptr.close()
