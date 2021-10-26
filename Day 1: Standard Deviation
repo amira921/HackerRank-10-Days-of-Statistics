@@ -1,0 +1,17 @@
+import os
+import random
+import re
+import sys
+from statistics import mean
+
+def stdDev(arr):
+    n=len(arr) ; m=sum(arr)/n  ; sum_arr=[] 
+    
+    for i in range(n): sum_arr.append((arr[i]-m)**2)   
+    
+    print( round(((sum(sum_arr)/n)**(1/2) ),1))
+    
+if __name__ == '__main__':
+    n = int(input().strip())
+
+    vals = list(map(int, input().rstrip().split()))
