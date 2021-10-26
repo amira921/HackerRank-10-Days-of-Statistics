@@ -1,0 +1,32 @@
+import math
+import os
+import random
+import re
+import sys
+from statistics import median   
+
+def interQuartile(values, freqs):
+    s=[] ; n=len(values)
+    
+    for i in range(n): s+= [values[i]]*freqs[i]
+    
+    s.sort() ; mid=len(s)//2
+    
+    if (len(s)%2!=0):
+        q1=median(s[:mid])
+        q3=median(s[mid+1:])
+        print(round((float(q3-q1)),1))
+        
+    elif (len(s)%2==0):
+        q1=median(s[:mid])
+        q3=median(s[mid:])
+        print(round((float(q3-q1)),1))
+        
+if __name__ == '__main__':
+    n = int(input().strip())
+
+    val = list(map(int, input().rstrip().split()))
+
+    freq = list(map(int, input().rstrip().split()))
+
+    interQuartile(val, freq)
