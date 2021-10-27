@@ -1,0 +1,10 @@
+def geometric(p,x):
+    return ((1-p)**(x-1))*p
+
+line=input().split()
+n=float(line[0])
+d=float(line[1])
+
+p=n/d ; x=int(input()) 
+
+print(round(geometric(p,x),3))
