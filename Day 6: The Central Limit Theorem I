@@ -1,0 +1,13 @@
+def cdf(z):
+    return 0.5*(1 + math.erf(Z/(math.sqrt(2))))
+
+x = int(input())
+n = int(input())
+mu = int(input())
+sigma = int(input())
+
+mu_sum = n * mu
+sigma_sum = math.sqrt(n) * sigma
+Z = (x - mu_sum)/sigma_sum
+
+print(round(cdf(Z), 4))
