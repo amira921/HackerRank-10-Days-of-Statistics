@@ -1,0 +1,7 @@
+line=input().split()
+
+lamda1=float(line[0]) ; lamda2=float(line[1])
+
+f1=160+40*(lamda1+(lamda1**2)) ; f2=128+40*(lamda2+(lamda2**2))
+
+print(round(f1,3)) ; print(round(f2,3))
