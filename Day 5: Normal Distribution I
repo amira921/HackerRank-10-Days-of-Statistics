@@ -1,0 +1,17 @@
+import math as m
+
+def N(mean, std, x):
+        return 0.5 + 0.5 * m.erf((x-mean)/(std* 2**0.5))
+    
+line=input().split()
+mean=float(line[0])
+stand=float(line[1])
+
+x1=(float)(input())
+x2=input().split()
+x21=float(x2[0])
+x22=float(x2[1])
+
+
+print(round(N(mean,stand,x1),3))
+print(round(N(mean,stand,x22)-N(mean,stand,x21),3))
