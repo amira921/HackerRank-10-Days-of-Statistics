@@ -1,0 +1,13 @@
+import math
+
+def cdf(z):
+    return 0.5*(1 + math.erf(Z/(math.sqrt(2))))
+
+x = float(input())
+n = float(input())
+mu = n*float(input())
+sigma = math.sqrt(n)*float(input())
+
+Z = (x - mu)/sigma
+
+print(round(cdf(Z), 4))
