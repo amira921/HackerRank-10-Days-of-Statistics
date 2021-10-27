@@ -1,0 +1,13 @@
+def geometric(p,x):
+    result=0
+    for i in range(1,x+1):
+       result+=((1-p)**(i-1))*p
+    return result
+
+line=input().split()
+n=float(line[0])
+d=float(line[1])
+
+p=n/d
+x=int(input()) 
+print(round(geometric(p,x),3))
