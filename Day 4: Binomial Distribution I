@@ -1,0 +1,12 @@
+import math as m
+
+line=input().split()
+l=float(line[0])
+r=float(line[1])
+
+boys = l /(l+r)
+result=0
+
+for i in range(3,7): result += ( (m.factorial(6)/(m.factorial(i)*m.factorial(6-i))) *(boys**i)*((1-boys)**(6-i)) )
+     
+print(round(result,3))
