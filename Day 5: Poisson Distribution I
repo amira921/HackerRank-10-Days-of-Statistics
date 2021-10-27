@@ -1,0 +1,8 @@
+import math as m
+
+def poisson(l,x):
+    return ((l**x)* m.exp(-l))/m.factorial(x)
+
+lamda=float(input())
+x=float(input())
+print(round(poisson(lamda,x),3))
