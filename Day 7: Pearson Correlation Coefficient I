@@ -1,0 +1,18 @@
+N = int(input())
+X = list(map(float,input().strip().split()))
+Y = list(map(float,input().strip().split()))
+
+mu_x = sum(X) / N
+mu_y = sum(Y) / N
+
+xi_mu_x=[(i - mu_x)**2 for i in X]
+stdv_x = (sum(xi_mu_x) / N)**0.5
+
+yi_mu_y=[(i - mu_y)**2 for i in Y]
+stdv_y = (sum(yi_mu_y) / N)**0.5
+
+cov = sum([(X[i] - mu_x) * (Y[i] -mu_y) for i in range(N)])
+
+Pearson = cov / (N * stdv_x * stdv_y)
+
+print(round(Pearson,3))
